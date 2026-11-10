@@ -1,58 +1,90 @@
 package com.abojabal.auto;
 
 import android.accessibilityservice.AccessibilityService;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Toast;
 
 public class AutoService extends AccessibilityService {
-
     private boolean isRunning = false;
-    private String[] wordsToType;
-    private int currentWordIndex = 0;
+    private String[] words;
+    private int currentIndex = 0;
     private int speed = 50;
-    private boolean fawarizOn = false;
+    private boolean fawariz = false;
+    private Handler handler = new Handler(Looper.getMainLooper());
 
     @Override
     public void onServiceConnected() {
-        // تحميل الإعدادات من الذاكرة
-        wordsToType = MyPrefs.getWords(this).split("\n");
+        loadSettings();
+        Toast.makeText(this, "خدمة الأوتو جاهزة! اضغط زر الصوت مرتين للتشغيل", Toast.LENGTH_LONG).show();
+    }
+
+    private void loadSettings() {
+        words = MyPrefs.getWords(this).split("\n");
         speed = MyPrefs.getSpeed(this);
-        fawarizOn = MyPrefs.isFawarizOn(this);
-        Toast.makeText(this, "خدمة الأوتو جاهزة", Toast.LENGTH_SHORT).show();
+        fawariz = MyPrefs.isFawarizOn(this);
     }
 
     @Override
-    public void onAccessibilityEvent(AccessibilityEvent event) {
-        // هنا نلتقط ضغطات زر الصوت (مثلاً لتفعيل/إيقاف)
-        if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_CLICKED) {
-            // منطق تشغيل/إيقاف (تحتاج ربط مع زر الصوت)
+    protected boolean onKeyEvent(KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (event.getRepeatCount() == 0) {
+                long currentTime = System.currentTimeMillis();
+                if (currentTime - lastClickTime < 500) {
+                    // ضغطتين متتاليتين
+                    toggleAuto();
+                }
+                lastClickTime = currentTime;
+            }
+            return true;
+        }
+        return super.onKeyEvent(event);
+    }
+    private long lastClickTime = 0;
+
+    private void toggleAuto() {
+        isRunning = !isRunning;
+        if (isRunning) {
+            Toast.makeText(this, "بدأ الأوتو!", Toast.LENGTH_SHORT).show();
+            startTyping();
+        } else {
+            Toast.makeText(this, "توقف الأوتو!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void typeNextWord(AccessibilityNodeInfo root) {
-        if (currentWordIndex >= wordsToType.length) {
-            currentWordIndex = 0; // إعادة من البداية بدون تكرار
-        }
-        String word = wordsToType[currentWordIndex];
+    private void startTyping() {
+        if (!isRunning || words == null || words.length == 0) return;
         
-        // إذا الفوارز مفعلة، نضيف فوارز
-        if (fawarizOn) {
-            String[] fawarizList = {"~", "~+~", "~+", "~•~", "~~", "~#~", "#~#", "°~°", "•~"};
-            int random = (int) (Math.random() * fawarizList.length);
-            word = fawarizList[random] + word + fawarizList[random];
+        AccessibilityNodeInfo root = getRootInActiveWindow();
+        if (root == null) {
+            handler.postDelayed(this::startTyping, 100);
+            return;
         }
 
-        // البحث عن حقل الكتابة وكتابة الكلمة
-        AccessibilityNodeInfo inputField = root.findFocus(AccessibilityNodeInfo.FOCUS_INPUT);
-        if (inputField != null) {
-            inputField.setText(word + " "); // مسافة بدل سطر جديد
+        AccessibilityNodeInfo input = root.findFocus(AccessibilityNodeInfo.FOCUS_INPUT);
+        if (input != null) {
+            String word = words[currentIndex];
+            if (fawariz) {
+                String[] f = {"~", "~+~", "~+", "~•~", "~~", "~#~", "#~#", "°~°", "•~"};
+                String x = f[(int) (Math.random() * f.length)];
+                word = x + word + x;
+            }
+            
+            input.setText(word + " ");
+            currentIndex = (currentIndex + 1) % words.length;
+            
+            handler.postDelayed(this::startTyping, speed);
+        } else {
+            handler.postDelayed(this::startTyping, 100);
         }
-
-        currentWordIndex++;
     }
 
     @Override
-    public void onInterrupt() {
+    public void onAccessibilityEvent(AccessibilityEvent event) {}
+    @Override
+    public void onInterrupt() {}
     }
-}
