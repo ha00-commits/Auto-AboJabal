@@ -5,37 +5,44 @@ import android.content.SharedPreferences;
 
 public class MyPrefs {
     private static final String PREF_NAME = "AutoPrefs";
-    private static final String KEY_WORDS = "words";
-    private static final String KEY_SPEED = "speed";
-    private static final String KEY_FAWARIZ = "fawariz";
 
     public static void saveWords(Context context, String words) {
-        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        prefs.edit().putString(KEY_WORDS, words).apply();
+        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit().putString("words", words).apply();
     }
 
     public static String getWords(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        return prefs.getString(KEY_WORDS, "");
+        return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).getString("words", "");
     }
 
     public static void saveSpeed(Context context, int speed) {
-        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        prefs.edit().putInt(KEY_SPEED, speed).apply();
+        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit().putInt("speed", speed).apply();
     }
 
     public static int getSpeed(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        return prefs.getInt(KEY_SPEED, 50);
+        return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).getInt("speed", 50);
     }
 
     public static void saveFawariz(Context context, boolean isOn) {
-        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        prefs.edit().putBoolean(KEY_FAWARIZ, isOn).apply();
+        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit().putBoolean("fawariz", isOn).apply();
     }
 
     public static boolean isFawarizOn(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        return prefs.getBoolean(KEY_FAWARIZ, false);
+        return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).getBoolean("fawariz", false);
     }
-  }
+
+    public static void saveTatir(Context context, boolean isOn) {
+        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit().putBoolean("tatir", isOn).apply();
+    }
+
+    public static boolean isTatirOn(Context context) {
+        return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).getBoolean("tatir", false);
+    }
+
+    public static void saveTaklish(Context context, boolean isOn) {
+        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit().putBoolean("taklish", isOn).apply();
+    }
+
+    public static boolean isTaklishOn(Context context) {
+        return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).getBoolean("taklish", false);
+    }
+    }
