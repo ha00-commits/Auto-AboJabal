@@ -1,60 +1,17 @@
 package com.abojabal.auto;
 
-import android.os.Bundle;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Switch;
-import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
+import android.content.SharedPreferences;
 
-public class MainActivity extends AppCompatActivity {
+public class MyPrefs {
+    private static final String PREF_NAME = "AutoPrefs";
 
-    EditText wordsInput, speedInput;
-    Switch fawarizSwitch, tatirSwitch, taklishSwitch;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        wordsInput = findViewById(R.id.wordsInput);
-        speedInput = findViewById(R.id.speedInput);
-        fawarizSwitch = findViewById(R.id.fawarizSwitch);
-        tatirSwitch = findViewById(R.id.tatirSwitch);
-        taklishSwitch = findViewById(R.id.taklishSwitch);
-        
-        Button btnSelectKeyboard = findViewById(R.id.btnSelectKeyboard);
-        Button saveButton = findViewById(R.id.saveButton);
-
-        // تحميل الإعدادات المحفوظة
-        wordsInput.setText(MyPrefs.getWords(this));
-        speedInput.setText(String.valueOf(MyPrefs.getSpeed(this)));
-        fawarizSwitch.setChecked(MyPrefs.isFawarizOn(this));
-        tatirSwitch.setChecked(MyPrefs.isTatirOn(this));
-        taklishSwitch.setChecked(MyPrefs.isTaklishOn(this));
-
-        // زر اختيار الكيبورد
-        btnSelectKeyboard.setOnClickListener(v -> {
-            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            if (imm != null) {
-                imm.showInputMethodPicker();
-            }
-        });
-
-        // زر الحفظ
-        saveButton.setOnClickListener(v -> {
-            MyPrefs.saveWords(this, wordsInput.getText().toString());
-            try {
-                MyPrefs.saveSpeed(this, Integer.parseInt(speedInput.getText().toString()));
-            } catch (Exception e) {
-                MyPrefs.saveSpeed(this, 50);
-            }
-            MyPrefs.saveFawariz(this, fawarizSwitch.isChecked());
-            MyPrefs.saveTatir(this, tatirSwitch.isChecked());
-            MyPrefs.saveTaklish(this, taklishSwitch.isChecked());
-
-            Toast.makeText(this, "تم حفظ الإعدادات بنجاح!", Toast.LENGTH_SHORT).show();
-        });
-    }
-            }
+    public static void saveWords(Context c, String v) { c.getSharedPreferences(PREF_NAME, 0).edit().putString("words", v).apply(); }
+    public static String getWords(Context c) { return c.getSharedPreferences(PREF_NAME, 0).getString("words", ""); }
+    public static void saveSpeed(Context c, int v) { c.getSharedPreferences(PREF_NAME, 0).edit().putInt("speed", v).apply(); }
+    public static int getSpeed(Context c) { return c.getSharedPreferences(PREF_NAME, 0).getInt("speed", 50); }
+    public static void saveFawariz(Context c, boolean v) { c.getSharedPreferences(PREF_NAME, 0).edit().putBoolean("fawariz", v).apply(); }
+    public static boolean isFawarizOn(Context c) { return c.getSharedPreferences(PREF_NAME, 0).getBoolean("fawariz", false); }
+    public static void saveTatir(Context c, boolean v) { c.getSharedPreferences(PREF_NAME, 0).edit().putBoolean("tatir", v).apply(); }
+    public static boolean isTatirOn(Context c) { return c.getSharedPreferences(PREF_NAME, 0).getBoolean("tatir", false); }
+                                             }
