@@ -1,13 +1,11 @@
 package com.abojabal.auto;
 
 import android.accessibilityservice.AccessibilityService;
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Toast;
 
 public class AutoService extends AccessibilityService {
     private boolean isRunning = false;
@@ -16,11 +14,12 @@ public class AutoService extends AccessibilityService {
     private int speed = 50;
     private boolean fawariz = false;
     private Handler handler = new Handler(Looper.getMainLooper());
+    private long lastClickTime = 0;
 
     @Override
     public void onServiceConnected() {
         loadSettings();
-        Toast.makeText(this, "خدمة الأوتو جاهزة! اضغط زر الصوت مرتين للتشغيل", Toast.LENGTH_LONG).show();
+        // لا نطلع أي إشعار (Toast) عشان يكون صامت
     }
 
     private void loadSettings() {
@@ -31,6 +30,7 @@ public class AutoService extends AccessibilityService {
 
     @Override
     protected boolean onKeyEvent(KeyEvent event) {
+        // نراقب زر خفض الصوت
         if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN && event.getAction() == KeyEvent.ACTION_DOWN) {
             if (event.getRepeatCount() == 0) {
                 long currentTime = System.currentTimeMillis();
@@ -40,19 +40,15 @@ public class AutoService extends AccessibilityService {
                 }
                 lastClickTime = currentTime;
             }
-            return true;
+            return true; // نرجع true عشان التطبيق يمسك الزر
         }
         return super.onKeyEvent(event);
     }
-    private long lastClickTime = 0;
 
     private void toggleAuto() {
         isRunning = !isRunning;
         if (isRunning) {
-            Toast.makeText(this, "بدأ الأوتو!", Toast.LENGTH_SHORT).show();
             startTyping();
-        } else {
-            Toast.makeText(this, "توقف الأوتو!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -87,4 +83,4 @@ public class AutoService extends AccessibilityService {
     public void onAccessibilityEvent(AccessibilityEvent event) {}
     @Override
     public void onInterrupt() {}
-    }
+}
