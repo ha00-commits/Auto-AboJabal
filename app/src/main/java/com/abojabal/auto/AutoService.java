@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.os.Bundle;
 
 public class AutoService extends AccessibilityService {
     private boolean isRunning = false;
@@ -19,7 +20,6 @@ public class AutoService extends AccessibilityService {
     @Override
     public void onServiceConnected() {
         loadSettings();
-        // لا نطلع أي إشعار (Toast) عشان يكون صامت
     }
 
     private void loadSettings() {
@@ -30,17 +30,15 @@ public class AutoService extends AccessibilityService {
 
     @Override
     protected boolean onKeyEvent(KeyEvent event) {
-        // نراقب زر خفض الصوت
         if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN && event.getAction() == KeyEvent.ACTION_DOWN) {
             if (event.getRepeatCount() == 0) {
                 long currentTime = System.currentTimeMillis();
                 if (currentTime - lastClickTime < 500) {
-                    // ضغطتين متتاليتين
                     toggleAuto();
                 }
                 lastClickTime = currentTime;
             }
-            return true; // نرجع true عشان التطبيق يمسك الزر
+            return true;
         }
         return super.onKeyEvent(event);
     }
@@ -70,7 +68,11 @@ public class AutoService extends AccessibilityService {
                 word = x + word + x;
             }
             
-            input.setText(word + " ");
+            // محاولة الكتابة المباشرة
+            Bundle arguments = new Bundle();
+            arguments.putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, word + " ");
+            input.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, arguments);
+            
             currentIndex = (currentIndex + 1) % words.length;
             
             handler.postDelayed(this::startTyping, speed);
@@ -83,4 +85,4 @@ public class AutoService extends AccessibilityService {
     public void onAccessibilityEvent(AccessibilityEvent event) {}
     @Override
     public void onInterrupt() {}
-}
+    }
