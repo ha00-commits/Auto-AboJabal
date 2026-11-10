@@ -94,14 +94,6 @@
             android:textColor="#FFFFFF"
             android:layout_marginBottom="10dp" />
 
-        <Switch
-            android:id="@+id/taklishSwitch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="التكليش (كتابة متتالية)"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="20dp" />
-
         <Button
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
