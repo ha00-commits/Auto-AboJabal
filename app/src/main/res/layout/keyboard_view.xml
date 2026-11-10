@@ -33,61 +33,52 @@
             android:textSize="10sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="horizontal">
-        <Button android:id="@+id/btn_dad" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ض" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_sad" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ص" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_thaa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ث" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_qaf" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ق" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_faa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ف" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_ghain" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="غ" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_ain" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ع" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_haa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ه" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_khaa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="خ" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_haa2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ح" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
+    <!-- صف 1 -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
+        <Button android:id="@+id/btn_dad" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ض" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_sad" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ص" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_thaa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ث" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_qaf" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ق" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_faa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ف" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_ghain" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="غ" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_ain" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ع" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_haa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ه" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_khaa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="خ" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_haa2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ح" android:background="#1A1A1A" android:textColor="#FFF"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="horizontal">
-        <Button android:id="@+id/btn_sheen" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ش" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_seen" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="س" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_yaa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ي" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_baa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ب" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_lam" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ل" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_alif" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ا" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_taa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ت" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_noon" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ن" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_meem" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="م" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_kaf" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ك" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
+    <!-- صف 2 -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
+        <Button android:id="@+id/btn_sheen" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ش" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_seen" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="س" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_yaa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ي" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_baa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ب" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_lam" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ل" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_alif" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ا" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_taa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ت" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_noon" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ن" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_meem" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="م" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_kaf" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ك" android:background="#1A1A1A" android:textColor="#FFF"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="horizontal">
-        <Button android:id="@+id/btn_taa2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ط" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_zaa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ظ" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_dal" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="د" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_thal" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ذ" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_raa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ر" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_zay" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ز" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_waw" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="و" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_taa_marbuta" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ة" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_alif_maqsura" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ى" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
-        <Button android:id="@+id/btn_hamza" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ء" android:background="#1A1A1A" android:textColor="#FFFFFF" android:textSize="18sp"/>
+    <!-- صف 3 -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
+        <Button android:id="@+id/btn_taa2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ط" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_zaa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ظ" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_dal" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="د" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_thal" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ذ" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_raa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ر" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_zay" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ز" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_waw" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="و" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_taa_marbuta" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ة" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_alif_maqsura" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ى" android:background="#1A1A1A" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_hamza" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ء" android:background="#1A1A1A" android:textColor="#FFF"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="4dp">
-        <Button android:id="@+id/btn_space" android:layout_width="0dp" android:layout_weight="5" android:layout_height="match_parent" android:text="مسافة" android:background="#222222" android:textColor="#FFFFFF" android:textSize="16sp"/>
-        <Button android:id="@+id/btn_enter" android:layout_width="0dp" android:layout_weight="2" android:layout_height="match_parent" android:text="إدخال" android:background="#00FFCC" android:textColor="#000000" android:textStyle="bold" android:textSize="14sp"/>
-        <Button android:id="@+id/btn_backspace" android:layout_width="0dp" android:layout_weight="2" android:layout_height="match_parent" android:text="مسح" android:background="#FF3333" android:textColor="#FFFFFF" android:textSize="14sp"/>
+    <!-- صف التحكم -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:orientation="horizontal" android:layout_marginTop="4dp">
+        <Button android:id="@+id/btn_space" android:layout_width="0dp" android:layout_weight="5" android:layout_height="match_parent" android:text="مسافة" android:background="#222" android:textColor="#FFF"/>
+        <Button android:id="@+id/btn_enter" android:layout_width="0dp" android:layout_weight="2" android:layout_height="match_parent" android:text="إدخال" android:background="#00FFCC" android:textColor="#000"/>
+        <Button android:id="@+id/btn_backspace" android:layout_width="0dp" android:layout_weight="2" android:layout_height="match_parent" android:text="مسح" android:background="#FF3333" android:textColor="#FFF"/>
     </LinearLayout>
 </LinearLayout>
