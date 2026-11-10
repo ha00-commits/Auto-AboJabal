@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <!-- شريط علوي -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#1A1A1A"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="أوتو أبوجبل"
+            android:textColor="#00FFCC"
+            android:textStyle="bold" />
+        <!-- النقطة السرية -->
+        <Button
+            android:id="@+id/secretDotBtn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:background="#000000"
+            android:text="."
+            android:textColor="#000000"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- صفوف الكيبورد (الحروف) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ض" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ص" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ث" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ق" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ف" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="غ" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ع" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ه" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="خ" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ح" android:background="#222222" android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ش" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="س" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ي" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ب" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ل" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ا" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ت" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ن" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="م" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ك" android:background="#222222" android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ط" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ظ" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="د" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ذ" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ر" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ز" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="و" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ة" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ى" android:background="#222222" android:textColor="#FFFFFF"/>
+        <Button android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ء" android:background="#222222" android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <!-- أزرار التحكم -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <Button android:id="@+id/btnSpace" android:layout_width="0dp" android:layout_weight="5" android:layout_height="match_parent" android:text="مسافة" android:background="#333333" android:textColor="#FFFFFF"/>
+        <Button android:id="@+id/btnEnter" android:layout_width="0dp" android:layout_weight="2" android:layout_height="match_parent" android:text="إدخال" android:background="#00FFCC" android:textColor="#000000"/>
+        <Button android:id="@+id/btnBackspace" android:layout_width="0dp" android:layout_weight="2" android:layout_height="match_parent" android:text="مسح" android:background="#FF3333" android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</LinearLayout>
