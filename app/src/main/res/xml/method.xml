@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <input-method xmlns:android="http://schemas.android.com/apk/res/android"
     android:settingsActivity="com.abojabal.auto.MainActivity">
-    <subtype
-        android:label="أوتو أبوجبل"
-        android:imeSubtypeMode="keyboard" />
+    <subtype android:label="أوتو أبوجبل" android:imeSubtypeMode="keyboard" />
 </input-method>
