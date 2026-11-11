@@ -1,17 +1,43 @@
 package com.abojabal.auto;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MyPrefs {
-    private static final String PREF_NAME = "AutoPrefs";
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-    public static void saveWords(Context c, String v) { c.getSharedPreferences(PREF_NAME, 0).edit().putString("words", v).apply(); }
-    public static String getWords(Context c) { return c.getSharedPreferences(PREF_NAME, 0).getString("words", ""); }
-    public static void saveSpeed(Context c, int v) { c.getSharedPreferences(PREF_NAME, 0).edit().putInt("speed", v).apply(); }
-    public static int getSpeed(Context c) { return c.getSharedPreferences(PREF_NAME, 0).getInt("speed", 50); }
-    public static void saveFawariz(Context c, boolean v) { c.getSharedPreferences(PREF_NAME, 0).edit().putBoolean("fawariz", v).apply(); }
-    public static boolean isFawarizOn(Context c) { return c.getSharedPreferences(PREF_NAME, 0).getBoolean("fawariz", false); }
-    public static void saveTatir(Context c, boolean v) { c.getSharedPreferences(PREF_NAME, 0).edit().putBoolean("tatir", v).apply(); }
-    public static boolean isTatirOn(Context c) { return c.getSharedPreferences(PREF_NAME, 0).getBoolean("tatir", false); }
-                                             }
+        EditText wordsInput = findViewById(R.id.wordsInput);
+        EditText speedInput = findViewById(R.id.speedInput);
+        Switch fawarizSwitch = findViewById(R.id.fawarizSwitch);
+        Switch tatirSwitch = findViewById(R.id.tatirSwitch);
+        Button btnSelect = findViewById(R.id.btnSelectKeyboard);
+        Button saveBtn = findViewById(R.id.saveButton);
+
+        wordsInput.setText(MyPrefs.getWords(this));
+        speedInput.setText(String.valueOf(MyPrefs.getSpeed(this)));
+        fawarizSwitch.setChecked(MyPrefs.isFawarizOn(this));
+        tatirSwitch.setChecked(MyPrefs.isTatirOn(this));
+
+        btnSelect.setOnClickListener(v -> {
+            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            if (imm != null) imm.showInputMethodPicker();
+        });
+
+        saveBtn.setOnClickListener(v -> {
+            MyPrefs.saveWords(this, wordsInput.getText().toString());
+            try { MyPrefs.saveSpeed(this, Integer.parseInt(speedInput.getText().toString())); }
+            catch (Exception e) { MyPrefs.saveSpeed(this, 50); }
+            MyPrefs.saveFawariz(this, fawarizSwitch.isChecked());
+            MyPrefs.saveTatir(this, tatirSwitch.isChecked());
+            Toast.makeText(this, "تم الحفظ!", Toast.LENGTH_SHORT).show();
+        });
+    }
+    }
