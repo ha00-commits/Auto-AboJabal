@@ -33,7 +33,6 @@
             android:textSize="10sp" />
     </LinearLayout>
 
-    <!-- صف 1 -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
         <Button android:id="@+id/btn_dad" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ض" android:background="#1A1A1A" android:textColor="#FFF"/>
         <Button android:id="@+id/btn_sad" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ص" android:background="#1A1A1A" android:textColor="#FFF"/>
@@ -47,7 +46,6 @@
         <Button android:id="@+id/btn_haa2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ح" android:background="#1A1A1A" android:textColor="#FFF"/>
     </LinearLayout>
 
-    <!-- صف 2 -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
         <Button android:id="@+id/btn_sheen" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ش" android:background="#1A1A1A" android:textColor="#FFF"/>
         <Button android:id="@+id/btn_seen" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="س" android:background="#1A1A1A" android:textColor="#FFF"/>
@@ -61,7 +59,6 @@
         <Button android:id="@+id/btn_kaf" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ك" android:background="#1A1A1A" android:textColor="#FFF"/>
     </LinearLayout>
 
-    <!-- صف 3 -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
         <Button android:id="@+id/btn_taa2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ط" android:background="#1A1A1A" android:textColor="#FFF"/>
         <Button android:id="@+id/btn_zaa" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ظ" android:background="#1A1A1A" android:textColor="#FFF"/>
@@ -75,7 +72,6 @@
         <Button android:id="@+id/btn_hamza" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:text="ء" android:background="#1A1A1A" android:textColor="#FFF"/>
     </LinearLayout>
 
-    <!-- صف التحكم -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:orientation="horizontal" android:layout_marginTop="4dp">
         <Button android:id="@+id/btn_space" android:layout_width="0dp" android:layout_weight="5" android:layout_height="match_parent" android:text="مسافة" android:background="#222" android:textColor="#FFF"/>
         <Button android:id="@+id/btn_enter" android:layout_width="0dp" android:layout_weight="2" android:layout_height="match_parent" android:text="إدخال" android:background="#00FFCC" android:textColor="#000"/>
